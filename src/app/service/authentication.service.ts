@@ -15,6 +15,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AuthenticationService {
   private token: string;
   private loggedInUserName: string;
+  private hostUrl = environment.apiUrl + environment.v1_User;
 
   constructor(
     private httpClient: HttpClient,
@@ -23,7 +24,7 @@ export class AuthenticationService {
 
   public login(user: User): Observable<HttpResponse<any> | HttpErrorResponse> {
     return this.httpClient.post<HttpResponse<any> | HttpErrorResponse>(
-      `${environment.apiUrl}${environment.v1_User}${environment.login}`,
+      `${this.hostUrl}${environment.login}`,
       user,
       { observe: 'response' }
     );
@@ -33,7 +34,7 @@ export class AuthenticationService {
     user: User
   ): Observable<HttpResponse<any> | HttpErrorResponse> {
     return this.httpClient.post<HttpResponse<any> | HttpErrorResponse>(
-      `${environment.apiUrl}${environment.v1_User}${environment.register}`,
+      `${this.hostUrl}${environment.register}`,
       user
     );
   }

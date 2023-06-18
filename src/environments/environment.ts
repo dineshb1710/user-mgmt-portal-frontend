@@ -7,7 +7,14 @@ export const environment = {
   apiUrl: 'http://localhost:8881',
   v1_User: '/api/v1/user',
   login: '/login',
-  register: '/register'
+  register: '/register',
+  getUsers: '/all',
+  addUser: '/add',
+  updateUser: '/update',
+  findByUsername: '/find/',
+  deleteUser: '/delete/',
+  resetPassword: '/reset/password',
+  updateProfileImage: '/update/profileImage'
 };
 
 /*
