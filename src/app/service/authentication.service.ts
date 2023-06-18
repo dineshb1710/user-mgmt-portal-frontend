@@ -15,7 +15,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AuthenticationService {
   private token: string;
   private loggedInUserName: string;
-  private hostUrl = environment.apiUrl + environment.v1_User;
+  public hostUrl = environment.apiUrl + environment.v1_User;
 
   constructor(
     private httpClient: HttpClient,
